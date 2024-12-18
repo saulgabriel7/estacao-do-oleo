@@ -1,0 +1,334 @@
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  /* Menu Hamburguer */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.4s ease;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 65px;
+  }
+  
+  /* Botão */
+  .button {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .button:hover {
+    background: #3D3D3D;
+  }
+  
+  /* Navegação Desktop */
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-item:hover {
+    color: #D92525;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex; 
+    }
+  
+    /* Navegação Mobile */
+    .nav {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      flex-direction: column;
+      gap: 10px;
+      padding: 35px;
+      text-align: center;
+    }
+  
+    .nav.active {
+      display: flex;
+    }  
+    
+    .nav {
+      flex-direction: column;
+    }
+  
+    .button {
+      display: flex; /* Esconde o botão no mobile */
+      width: 95px;
+      font-size: 12px;
+    }
+  }
+
+
+  .fundo {
+    position: relative;
+    width: 100%;
+    height: 642px;
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+}
+
+.fundo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/fundo.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35; /* Opacidade da imagem */
+    z-index: -1; /* Mantém a imagem no fundo */
+}
+
+.centro{
+  position: absolute;
+  top: 40%;
+  margin-inline: 100px;
+  text-align: center;
+}
+
+.titulo-grande h1{
+  font-size: 4rem;
+  color: #FAFAFA;
+  margin-bottom: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.texto-grande p{
+  color: #FAFAFA;
+  text-align: justify;
+}
+
+.texto-grande{
+  margin-inline: 300px;
+}
+
+@media (max-width: 768px) {
+  .centro {
+    margin-inline: 50px; /* Ajusta margens laterais */
+    top: 30%; /* Ajusta o posicionamento */
+  }
+  .titulo-grande h1 {
+    font-size: 2rem; /* Reduz ainda mais o título */
+  }
+  .texto-grande {
+    margin-inline: 50px; /* Reduz as margens laterais */
+  }
+
+}
+
+.secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  border-bottom: 1px solid #333;
+}
+
+/* Imagem alinhada */
+.imagem img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Texto alinhado */
+.texto {
+  flex: 1;
+  margin-left: 30px;
+  color: #b0b0b0;
+}
+
+.texto h2 {
+  color: #FAFAFA;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.texto p {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Alternar imagem e texto */
+.equipe {
+  flex-direction: row-reverse;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .secao {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .texto {
+      margin: 20px 0 0;
+  }
+
+  .imagem img {
+      max-width: 100%;
+  }
+}
+
+
+/* Depoimentos */
+.depoimentos {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .titulo-depoimentos {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FAFAFA;
+  }
+  
+  .linha-vermelha {
+    width: 80px;
+    height: 2px;
+    background-color: #D92525;
+    margin: 10px auto 30px;
+  }
+  
+  .depoimentos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card-depoimento {
+    background-color: #FFFFFF;
+    color: #000;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    position: relative;
+  }
+  
+  .aspas {
+    font-size: 2rem;
+    color: #D92525;
+    margin: 0;
+  }
+  
+  .texto-depoimento {
+    font-size: 0.9rem;
+    margin: 10px 0;
+  }
+  
+  .autor-depoimento {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Rodapé */
+  .rodape {
+    background-color: #000;
+    color: #FAFAFA;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .rodape-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .logo-rodape img {
+    height: 80px;
+  }
+  
+  .redes-sociais, .contato-rodape {
+    text-align: center;
+  }
+  
+  .icones-sociais img, .icones-contato img {
+    width: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .icones-sociais img:hover, .icones-contato img:hover {
+    transform: scale(1.2);
+  }
+  
+  .linha-rodape {
+    width: 100%;
+    height: 1px;
+    background-color: #444;
+    margin: 20px 0;
+  }
+  
+  .info-legais {
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  
