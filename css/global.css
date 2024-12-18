@@ -1,0 +1,22 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Archivo", serif;
+  }
+  
+  /* Body */
+  body {
+    background-color: #111111;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  button{
+    background: none;
+    border: none;
+  }
+  
