@@ -1,15 +1,65 @@
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   background-color: #000;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
 }
 
+/* Menu Hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Logo */
 .logo img {
   height: 65px;
 }
 
+/* Botão */
+.button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #3D3D3D;
+}
+
+/* Navegação Desktop */
 .nav {
   display: flex;
   gap: 20px;
@@ -26,19 +76,38 @@
   color: #D92525;
 }
 
-.button {
-  background: #444;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; 
+  }
 
-.button:hover {
-  background: #3D3D3D;
+  /* Navegação Mobile */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    gap: 10px;
+    padding: 35px;
+    text-align: center;
+  }
+
+  .nav.active {
+    display: flex;
+  }  
+  
+  .nav {
+    flex-direction: column;
+  }
+
+  .button {
+    display: flex; /* Esconde o botão no mobile */
+    width: 95px;
+    font-size: 12px;
+  }
 }
 
 /* Banner */
@@ -155,7 +224,7 @@
 
 .oficinas{
   height: auto;
-  padding: 150px;
+  padding: 80px;
   background-color: #FAFAFA;
 }
 
@@ -167,7 +236,7 @@
   padding: 50px;
   position: relative;
   border-radius: 10px;
-  margin-top: -200px;
+  margin-top: -120px;
 }
 
 .titulo{
@@ -176,6 +245,7 @@
   justify-content: center;
   margin-bottom: 30px;
   margin: 15px;
+  
 }
 
 .titulo h2 {
@@ -311,24 +381,137 @@
   background-color: #b0b0b0;
 }
 
+/* Depoimentos */
+.depoimentos {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.titulo-depoimentos {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #FAFAFA;
+}
+
+.linha-vermelha {
+  width: 80px;
+  height: 2px;
+  background-color: #D92525;
+  margin: 10px auto 30px;
+}
+
+.depoimentos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-depoimento {
+  background-color: #FFFFFF;
+  color: #000;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  position: relative;
+}
+
+.aspas {
+  font-size: 2rem;
+  color: #D92525;
+  margin: 0;
+}
+
+.texto-depoimento {
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.autor-depoimento {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Rodapé */
+.rodape {
+  background-color: #000;
+  color: #FAFAFA;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.rodape-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.logo-rodape img {
+  height: 80px;
+}
+
+.redes-sociais, .contato-rodape {
+  text-align: center;
+}
+
+.icones-sociais img, .icones-contato img {
+  width: 30px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.icones-sociais img:hover, .icones-contato img:hover {
+  transform: scale(1.2);
+}
+
+.linha-rodape {
+  width: 100%;
+  height: 1px;
+  background-color: #444;
+  margin: 20px 0;
+}
+
+.info-legais {
+  font-size: 0.8rem;
+  color: #888;
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
   .servicos {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav {
-    flex-direction: column;
+    margin-top: 0;
   }
 
   .card {
     width: 90%;
+  }
+
+  .bg-oficinas{
+    padding: 35px;
+  }
+
+  .oficinas{
+    padding: 40px;
+  }
+
+  .rodape-container{
+    flex-direction: column;
+  }
+
+  .logo-rodape{
+    margin-block: 25px;
+  }
+
+  .logo-rodape img{
+    width: 240px;
+    height: auto;
   }
 }
 
@@ -341,5 +524,4 @@
     font-size: 1.2rem;
   }
 }
-
 
