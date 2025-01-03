@@ -234,7 +234,7 @@
 /* Depoimentos */
 .depoimentos {
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
   }
   
   .titulo-depoimentos {
@@ -301,7 +301,8 @@
   }
   
   .logo-rodape img {
-    height: 80px;
+    width: 120px;
+    height: auto;
   }
   
   .redes-sociais, .contato-rodape {
