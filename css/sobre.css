@@ -176,7 +176,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 30px 15%;
   border-bottom: 1px solid #333;
 }
 
@@ -206,6 +206,8 @@
 .texto p {
   line-height: 1.5;
   font-size: 1rem;
+  margin-block: 15px;
+  text-align: justify;
 }
 
 /* Alternar imagem e texto */

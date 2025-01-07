@@ -236,6 +236,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
+
   
   @media (max-width: 768px) {
     .troca-container {
@@ -360,8 +361,6 @@
       gap: 0;
     }
   }
-
-
   
   input {
     position: absolute;
@@ -419,4 +418,19 @@
   
   input:checked ~ .p {
     max-height: 100px;
+  }
+
+  .frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 35px;
+    margin-bottom: 50px;
+  }
+  
+  iframe {
+    max-width: 100%;
+    width: 1200px; 
+    height: 450px; 
   }
